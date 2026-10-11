@@ -1,33 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leila Eddike – Élève ingénieure Data Engineering</title>
-<meta name="description" content="Portfolio de Leila Eddike, élève ingénieure en génie de la data à l'ENSIAS. Pipelines big data, ML et MLOps, cloud AWS.">
+<title>Leila Eddike – Data Engineering Student</title>
+<meta name="description" content="Portfolio of Leila Eddike, Data Engineering student at ENSIAS. Big data pipelines, ML and MLOps, AWS cloud.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Leila Eddike – Data Engineering">
-<meta property="og:description" content="Élève ingénieure génie de la data à l'ENSIAS. Découvrez mes projets, mes stages et mon parcours.">
+<meta property="og:title" content="Leila Eddike – Data Engineering Student">
+<meta property="og:description" content="Data Engineering student at ENSIAS. Discover my projects, internships and background.">
 <meta property="og:image" content="photo.jpg">
 <meta name="theme-color" content="#fbf7f4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
-
-<!--
-  SQL À EXÉCUTER DANS SUPABASE (SQL Editor) :
-
-  CREATE TABLE IF NOT EXISTS contact_messages (
-    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    name text NOT NULL, email text NOT NULL,
-    subject text NOT NULL, message text NOT NULL,
-    created_at timestamptz DEFAULT now()
-  );
-  ALTER TABLE contact_messages ENABLE ROW LEVEL SECURITY;
-  CREATE POLICY "Allow public insert" ON contact_messages
-  FOR INSERT TO anon WITH CHECK (true);
-  -- Ne crée AUCUNE policy SELECT pour anon : les messages restent privés.
--->
 
 <style>
 /* ========== TOKENS ========== */
@@ -145,18 +130,10 @@ nav.scrolled{background:rgba(251,247,244,.85);backdrop-filter:blur(14px);-webkit
 .award p{font-size:.95rem}
 
 /* ========== CONTACT ========== */
-.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:var(--s4)}
+.contact{display:grid;gap:var(--s2)}
+.contact li{font-size:1.15rem}
 .contact ul{display:grid;gap:var(--s1);margin-top:var(--s2)}
 .contact a:hover{color:var(--accent)}
-form{display:grid;gap:var(--s2)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)}
-.form-group{display:grid;gap:.35rem}
-label{font-size:.92rem;color:var(--muted)}
-input,textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;color:var(--text);font:inherit}
-input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
-textarea{min-height:140px;resize:vertical}
-.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
-#formSuccess{padding:var(--s3);border:1px solid var(--accent);border-radius:var(--r);background:var(--accent-soft)}
 
 /* ========== FOOTER ========== */
 footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);font-size:.95rem}
@@ -171,7 +148,6 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
   .menu.open{transform:none}
   .about,.contact,.card.featured{grid-template-columns:1fr}
   .projects{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
   .photo{width:200px;height:200px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -184,16 +160,16 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
 <body>
 
 <!-- ========== 1. NAV ========== -->
-<nav id="nav" aria-label="Navigation principale">
+<nav id="nav" aria-label="Main navigation">
   <div class="wrap nav-in">
-    <a href="#hero" class="logo" aria-label="Retour à l'accueil">Leila.</a>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <a href="#hero" class="logo" aria-label="Back to home">Leila.</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
     <div class="menu" id="menu">
-      <a href="#apropos">À propos</a>
-      <a href="#competences">Compétences</a>
-      <a href="#experiences">Expériences</a>
-      <a href="#projets">Projets</a>
-      <a href="#education">Éducation</a>
+      <a href="#apropos">About</a>
+      <a href="#competences">Skills</a>
+      <a href="#experiences">Experience</a>
+      <a href="#projets">Projects</a>
+      <a href="#education">Education</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </div>
@@ -206,17 +182,17 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
   <div class="wrap">
     <h1>Leila Eddike</h1>
     <p class="typing" aria-live="off"><span id="typed"></span><span class="caret"></span></p>
-    <p class="muted">Étudiante en génie de la data à l'ENSIAS, à Rabat.</p>
+    <p class="muted">Data Engineering student at ENSIAS, Rabat.</p>
     <div class="hero-btns">
-      <a href="#projets" class="btn primary">Voir mes projets</a>
-      <a href="#contact" class="btn">Me contacter</a>
+      <a href="#projets" class="btn primary">View my projects</a>
+      <a href="#contact" class="btn">Contact me</a>
     </div>
-    <svg class="flow" viewBox="0 0 420 60" role="img" aria-label="Schéma : source, transformation, valeur">
+    <svg class="flow" viewBox="0 0 420 60" role="img" aria-label="Diagram: data, pipeline, decision">
       <line x1="40" y1="20" x2="380" y2="20"/>
       <circle cx="40" cy="20" r="9"/><circle cx="210" cy="20" r="9"/><circle cx="380" cy="20" r="9"/>
-      <text x="40" y="50" text-anchor="middle">Données</text>
+      <text x="40" y="50" text-anchor="middle">Data</text>
       <text x="210" y="50" text-anchor="middle">Pipeline</text>
-      <text x="380" y="50" text-anchor="middle">Décision</text>
+      <text x="380" y="50" text-anchor="middle">Decision</text>
     </svg>
   </div>
 </section>
@@ -224,17 +200,16 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
 <!-- ========== 3. À PROPOS ========== -->
 <section id="apropos">
   <div class="wrap">
-    <h2 class="reveal">À propos</h2>
+    <h2 class="reveal">About</h2>
     <div class="about reveal">
-      <div class="photo"><img src="photo.jpg" alt="Portrait de Leila Eddike" onerror="this.remove();this.parentNode.textContent='L'"></div>
+      <div class="photo"><img src="photo.jpg" alt="Portrait of Leila Eddike" onerror="this.remove();this.parentNode.textContent='L'"></div>
       <div>
-        <p>Je m'appelle Leila, je suis en 3e année génie de la data à l'ENSIAS, à Rabat. Avant ça, j'ai fait deux ans de prépa (PSCI/PSI) au lycée Moulay Youssef.</p>
-        <p>J'aime tout ce qui tourne autour de la donnée : bases de données, big data, cloud et IA. Je l'ai mis en pratique pendant mes stages chez Dyn IT et Consult IT, et dans mes projets : un pipeline temps réel avec Kafka et Spark, un modèle de prédiction déployé avec Docker et Kubernetes, une architecture sécurisée sur AWS.</p>
-        <p>Ce que je préfère, c'est transformer des données brutes en quelque chose de fiable et d'utile. Si mon profil vous intéresse, n'hésitez pas à m'écrire.</p>
+        <p>I'm Leila Eddike, a student majoring in Data Engineering and eager to discover the hidden horizons of this field. My passion for it grew as I explored databases, big data and cloud computing through my studies and internships.</p>
+        <p>With my creativity and problem-solving skills, I hope to bring value to different sectors and find concrete solutions using everything I've learned along the way.</p>
         <div class="stats">
-          <div class="stat"><b data-target="3">0</b><span>Projets réalisés</span></div>
-          <div class="stat"><b data-target="2">0</b><span>Stages</span></div>
-          <div class="stat"><b data-target="2">0</b><span>Certifications AWS</span></div>
+          <div class="stat"><b data-target="3">0</b><span>Projects</span></div>
+          <div class="stat"><b data-target="2">0</b><span>Internships</span></div>
+          <div class="stat"><b data-target="2">0</b><span>AWS certifications</span></div>
         </div>
       </div>
     </div>
@@ -244,14 +219,14 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
 <!-- ========== 4. COMPÉTENCES ========== -->
 <section id="competences">
   <div class="wrap">
-    <h2 class="reveal">Compétences</h2>
+    <h2 class="reveal">Skills</h2>
     <div class="skills reveal">
-      <div><h3>Data Engineering</h3><span class="tag">Spark / PySpark</span><span class="tag">Kafka</span><span class="tag">Delta Lake</span><span class="tag">Hive Metastore</span><span class="tag">Airflow</span><span class="tag">ETL / ELT</span><span class="tag">Modélisation des données</span></div>
-      <div><h3>Cloud et DevOps</h3><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Git / GitHub</span><span class="tag">GitHub Actions (CI/CD)</span></div>
-      <div><h3>Data Science et ML</h3><span class="tag">Machine Learning</span><span class="tag">Deep Learning (CNN, RNN)</span><span class="tag">Federated Learning</span><span class="tag">Reinforcement Learning</span></div>
-      <div><h3>Programmation</h3><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">R</span></div>
-      <div><h3>Bases de données</h3><span class="tag">MySQL</span><span class="tag">SQL Server</span><span class="tag">SSMS</span><span class="tag">MongoDB</span></div>
-      <div><h3>Langues</h3><span class="tag">Arabe (langue maternelle)</span><span class="tag">Français (C1, courant)</span><span class="tag">Anglais (B2, professionnel)</span></div>
+      <div><h3>Data Engineering</h3><span class="tag">Spark / PySpark</span><span class="tag">Kafka</span><span class="tag">Delta Lake</span><span class="tag">Hive Metastore</span><span class="tag">Airflow</span><span class="tag">ETL / ELT</span><span class="tag">Data modeling</span></div>
+      <div><h3>Cloud &amp; DevOps</h3><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Git / GitHub</span><span class="tag">GitHub Actions (CI/CD)</span></div>
+      <div><h3>Data Science &amp; ML</h3><span class="tag">Machine Learning</span><span class="tag">Deep Learning (CNN, RNN)</span><span class="tag">Federated Learning</span><span class="tag">Reinforcement Learning</span></div>
+      <div><h3>Programming</h3><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">R</span></div>
+      <div><h3>Databases</h3><span class="tag">MySQL</span><span class="tag">SQL Server</span><span class="tag">SSMS</span><span class="tag">MongoDB</span></div>
+      <div><h3>Languages</h3><span class="tag">Arabic (native)</span><span class="tag">French (C1, fluent)</span><span class="tag">English (B2, professional)</span></div>
     </div>
   </div>
 </section>
@@ -259,26 +234,26 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
 <!-- ========== 5. EXPÉRIENCES ========== -->
 <section id="experiences">
   <div class="wrap">
-    <h2 class="reveal">Expériences</h2>
+    <h2 class="reveal">Experience</h2>
     <div class="timeline reveal">
       <div class="item">
-        <h3>Stage de fin d'année – Consult IT</h3>
-        <div class="when">Rabat · 1er juillet – 31 août 2026</div>
-        <p>Participation à l'évolution et au développement du CRM/ERP interne (Jupiter).</p>
+        <h3>End-of-year internship – Consult IT</h3>
+        <div class="when">Rabat · July 1 – August 31, 2026</div>
+        <p>Contributed to the development and evolution of the internal CRM/ERP (Jupiter).</p>
         <ul>
-          <li>Parsing structuré des besoins clients, structuration des compétences extraites et enrichissement des fiches Besoin dans le CRM.</li>
-          <li>Évolution et développement du matching candidats / besoins par embeddings et règles métier.</li>
+          <li>Structured parsing of client needs, structuring of extracted skills and enrichment of Need records in the CRM.</li>
+          <li>Development and evolution of candidate / need matching using embeddings and business rules.</li>
         </ul>
         <div class="stack"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">OpenClaw</span><span class="tag">OpenAI Embeddings</span></div>
       </div>
       <div class="item">
-        <h3>Stage de fin d'année – Dyn IT</h3>
-        <div class="when">Rabat · juillet 2025</div>
-        <p>Réalisation d'un tableau de bord pour la compétition Inwi Challenge.</p>
+        <h3>End-of-year internship – Dyn IT</h3>
+        <div class="when">Rabat · July 2025</div>
+        <p>Built a dashboard for the Inwi Challenge competition.</p>
         <ul>
-          <li>Analyse et préparation des données sources (Excel, CSV).</li>
-          <li>Création et gestion d'une base de données SQL Server, hébergée et sécurisée sur Azure SQL Database.</li>
-          <li>Modélisation des données et création de tableaux de bord interactifs sous Power BI.</li>
+          <li>Analysis and preparation of source data (Excel, CSV).</li>
+          <li>Creation and management of a SQL Server database, hosted and secured on Azure SQL Database.</li>
+          <li>Data modeling and creation of interactive Power BI dashboards.</li>
         </ul>
         <div class="stack"><span class="tag">SQL Server</span><span class="tag">Azure SQL Database</span><span class="tag">DAX</span><span class="tag">Power BI</span></div>
       </div>
@@ -289,34 +264,34 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
 <!-- ========== 6. PROJETS / RÉALISATIONS ========== -->
 <section id="projets">
   <div class="wrap">
-    <h2 class="reveal">Projets et réalisations</h2>
+    <h2 class="reveal">Projects &amp; achievements</h2>
     <div class="projects">
       <article class="card featured reveal">
-        <div class="thumb"><img src="archi-trafic.png" alt="Architecture du pipeline de trafic en temps réel" loading="lazy" onerror="this.remove()">Schéma d'architecture<div class="ov">Kafka → Spark → Delta Lake</div></div>
+        <div class="thumb"><img src="archi-trafic.png" alt="Architecture of the real-time traffic pipeline" loading="lazy" onerror="this.remove()">Architecture diagram<div class="ov">Kafka → Spark → Delta Lake</div></div>
         <div class="body">
-          <h3>Pipeline de données de trafic en temps réel</h3>
-          <p class="muted">Projet personnel · Big Data</p>
-          <ul><li>Pipeline big data temps réel : Kafka pour l'ingestion des données de trafic, Spark Structured Streaming pour leur traitement et transformation.</li><li>Architecture Delta Lake en couches Bronze / Silver / Gold pour structurer et fiabiliser les données.</li><li>Orchestration avec des DAGs Airflow et contrôle de la qualité des données avec Great Expectations entre les couches.</li></ul>
+          <h3>Real-time traffic data pipeline</h3>
+          <p class="muted">Personal project · Big Data</p>
+          <ul><li>Real-time big data pipeline: Kafka for traffic data ingestion, Spark Structured Streaming for processing and transformation.</li><li>Delta Lake architecture with Bronze / Silver / Gold layers to structure the data and make it reliable.</li><li>Orchestration with Airflow DAGs and data quality checks with Great Expectations between layers.</li></ul>
           <div><span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">Delta Lake</span><span class="tag">Hive Metastore</span><span class="tag">Airflow</span><span class="tag">Great Expectations</span></div>
           <div class="links"><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></div>
         </div>
       </article>
       <article class="card reveal">
-        <div class="thumb"><img src="archi-vols.png" alt="Architecture du projet de prédiction des retards de vols" loading="lazy" onerror="this.remove()">Schéma d'architecture<div class="ov">FastAPI → Docker → Kubernetes</div></div>
+        <div class="thumb"><img src="archi-vols.png" alt="Architecture of the flight delay prediction project" loading="lazy" onerror="this.remove()">Architecture diagram<div class="ov">FastAPI → Docker → Kubernetes</div></div>
         <div class="body">
-          <h3>Prédiction des retards de vols</h3>
-          <p class="muted">ENSIAS · ML et MLOps</p>
-          <ul><li>Analyse et nettoyage d'un dataset Kaggle de plus de 500 000 vols (pandas, NumPy).</li><li>Feature engineering : variables temporelles, encodage, catégorisation.</li><li>Modèle Gradient Boosting déployé en API REST avec FastAPI, Docker et Kubernetes.</li></ul>
+          <h3>Flight delay prediction</h3>
+          <p class="muted">ENSIAS · ML &amp; MLOps</p>
+          <ul><li>Analysis and cleaning of a Kaggle dataset of 500,000+ flights (pandas, NumPy).</li><li>Feature engineering: time-based variables, encoding, categorization.</li><li>Gradient Boosting model deployed as a REST API with FastAPI, Docker and Kubernetes.</li></ul>
           <div><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span></div>
           <div class="links"><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></div>
         </div>
       </article>
       <article class="card reveal">
-        <div class="thumb"><img src="archi-aws.png" alt="Architecture AWS sécurisée" loading="lazy" onerror="this.remove()">Schéma d'architecture<div class="ov">IAM · KMS · Secrets Manager</div></div>
+        <div class="thumb"><img src="archi-aws.png" alt="Secure AWS architecture" loading="lazy" onerror="this.remove()">Architecture diagram<div class="ov">IAM · KMS · Secrets Manager</div></div>
         <div class="body">
-          <h3>Secure Cloud et AI Architecture</h3>
+          <h3>Secure Cloud &amp; AI Architecture</h3>
           <p class="muted">ENSIAS · AWS</p>
-          <ul><li>Contrôles d'accès : Security Groups en moindre privilège, rôles IAM.</li><li>Protection des données au repos (KMS / RDS, S3 SSE) et en transit (TLS / HTTPS).</li><li>Gestion des secrets avec AWS Secrets Manager.</li></ul>
+          <ul><li>Access control: least-privilege Security Groups and IAM roles.</li><li>Data protection at rest (KMS / RDS, S3 SSE) and in transit (TLS / HTTPS).</li><li>Secrets management with AWS Secrets Manager.</li></ul>
           <div><span class="tag">AWS IAM</span><span class="tag">Security Groups</span><span class="tag">KMS</span><span class="tag">S3</span><span class="tag">RDS</span><span class="tag">Secrets Manager</span></div>
           <div class="links"><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></div>
         </div>
@@ -328,17 +303,17 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
 <!-- ========== 7. ÉDUCATION ========== -->
 <section id="education">
   <div class="wrap">
-    <h2 class="reveal">Éducation</h2>
+    <h2 class="reveal">Education</h2>
     <div class="timeline reveal">
       <div class="item">
-        <h3>Cycle ingénieur en génie de la data – ENSIAS</h3>
+        <h3>Engineering degree in Data Engineering – ENSIAS</h3>
         <div class="when">Rabat · 2024 – 2027</div>
-        <p>École Nationale Supérieure d'Informatique et d'Analyse des Systèmes.</p>
+        <p>National School of Computer Science and Systems Analysis.</p>
       </div>
       <div class="item">
-        <h3>Classes préparatoires PSCI / PSI – Lycée Moulay Youssef</h3>
+        <h3>Preparatory classes (PSCI / PSI) – Lycée Moulay Youssef</h3>
         <div class="when">Rabat · 2022 – 2024</div>
-        <p>Classes préparatoires aux grandes écoles.</p>
+        <p>Preparatory classes for the Grandes Écoles.</p>
       </div>
     </div>
   </div>
@@ -349,8 +324,8 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
   <div class="wrap">
     <h2 class="reveal">Certifications</h2>
     <div class="awards reveal">
-      <div class="award"><h3>AWS Academy Graduate – Cloud Architecting</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_CLOUD]" target="_blank" rel="noopener" class="tag">Voir sur Credly</a></p></div>
-      <div class="award"><h3>AWS Academy Graduate – Data Engineering</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_DATA]" target="_blank" rel="noopener" class="tag">Voir sur Credly</a></p></div>
+      <div class="award"><h3>AWS Academy Graduate – Cloud Architecting</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_CLOUD]" target="_blank" rel="noopener" class="tag">View on Credly</a></p></div>
+      <div class="award"><h3>AWS Academy Graduate – Data Engineering</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_DATA]" target="_blank" rel="noopener" class="tag">View on Credly</a></p></div>
     </div>
   </div>
 </section>
@@ -360,26 +335,13 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
   <div class="wrap">
     <h2 class="reveal">Contact</h2>
     <div class="contact reveal">
-      <div>
-        <p>Un stage, une mission ou une question sur un projet ? Écris-moi.</p>
-        <ul>
-          <li><a href="mailto:eddike.leilaa@gmail.com">eddike.leilaa@gmail.com</a></li>
-          <li class="muted">Rabat, Maroc</li>
-          <li><a href="https://www.linkedin.com/in/leila-eddike-b29b9b318/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
-      <form id="contactForm" novalidate>
-        <div class="form-row">
-          <div class="form-group"><label for="name">Nom</label><input id="name" name="name" required autocomplete="name"></div>
-          <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-        </div>
-        <div class="form-group"><label for="subject">Sujet</label><input id="subject" name="subject" required></div>
-        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-        <div class="hp" aria-hidden="true"><label>Ne pas remplir<input id="website" name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button type="submit" class="btn primary btn-submit" id="sendBtn">Envoyer le message</button>
-        <div id="formSuccess" role="status" hidden><strong>Message envoyé.</strong> Merci, je te réponds très vite.</div>
-      </form>
+      <p>Feel free to reach out.</p>
+      <ul>
+        <li><a href="mailto:eddike.leilaa@gmail.com">eddike.leilaa@gmail.com</a></li>
+        <li class="muted">Rabat, Morocco</li>
+        <li><a href="https://www.linkedin.com/in/leila-eddike-b29b9b318/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -397,25 +359,16 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6v5.3h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7v5.1h-4z"/></svg>
       </a>
     </div>
-    <a href="#hero">Retour en haut</a>
+    <a href="#hero">Back to top</a>
   </div>
 </footer>
 
-<!-- SDK Supabase : chargé AVANT le script principal -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-/* ========== CONFIG SUPABASE ========== */
-const SUPABASE_URL  = 'https://xxxx.supabase.co';   // À COMPLÉTER
-const SUPABASE_ANON = 'TA_CLE_PUBLIQUE_ANON';        // À COMPLÉTER
-let db = null;
-try { const { createClient } = supabase; db = createClient(SUPABASE_URL, SUPABASE_ANON); }
-catch (e) { console.error('Supabase indisponible :', e); }
-
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const $ = (s, c = document) => c.querySelector(s);
-const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const $ = (q, c = document) => c.querySelector(q);
+const $$ = (q, c = document) => [...c.querySelectorAll(q)];
 
-/* ----- Nav : blur au scroll + hamburger ----- */
+/* ----- Nav: blur on scroll + hamburger ----- */
 const nav = $('#nav'), burger = $('#burger'), menu = $('#menu');
 addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), { passive: true });
 burger.addEventListener('click', () => {
@@ -424,8 +377,8 @@ burger.addEventListener('click', () => {
 });
 $$('#menu a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
 
-/* ----- Hero : effet machine à écrire ----- */
-const titles = ['Data Engineer en devenir', 'Pipelines big data temps réel', 'Cloud, ML et MLOps'];
+/* ----- Hero: typing effect ----- */
+const titles = ['Data Engineer in the making', 'Real-time big data pipelines', 'Cloud, ML and MLOps'];
 const typed = $('#typed');
 if (reduced) { typed.textContent = titles[0]; }
 else {
@@ -440,7 +393,7 @@ else {
   })();
 }
 
-/* ----- Révélation au scroll + stats animées ----- */
+/* ----- Reveal on scroll + animated stats ----- */
 function countUp(el) {
   const target = +el.dataset.target;
   if (reduced) { el.textContent = target; return; }
@@ -459,51 +412,15 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 }), { threshold: .15 });
 $$('.reveal').forEach(el => io.observe(el));
 
-/* ----- Lien actif dans la nav ----- */
+/* ----- Active nav link ----- */
 const links = $$('#menu a[href^="#"]');
 const spy = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
 }), { rootMargin: '-45% 0px -50% 0px' });
-$$('main section').forEach(s => spy.observe(s));
+$$('main section').forEach(sec => spy.observe(sec));
 
-/* ----- Expériences : onglets ----- */
-const tabs = $$('.tab');
-tabs.forEach(tab => tab.addEventListener('click', () => {
-  tabs.forEach(t => {
-    const on = t === tab;
-    t.setAttribute('aria-selected', on);
-    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-  });
-}));
-
-/* ----- Footer : année dynamique ----- */
+/* ----- Footer: current year ----- */
 $('#year').textContent = new Date().getFullYear();
-
-/* ----- Contact : envoi vers Supabase ----- */
-const form = $('#contactForm'), sendBtn = $('#sendBtn');
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-  if ($('#website').value) return;                    // honeypot : robot détecté
-  const data = {
-    name: $('#name').value.trim(), email: $('#email').value.trim(),
-    subject: $('#subject').value.trim(), message: $('#message').value.trim()
-  };
-  if (!data.name || !data.email || !data.subject || !data.message) { alert('Remplis tous les champs.'); return; }
-  if (!db || SUPABASE_URL.includes('xxxx')) { alert('Supabase n\'est pas configuré : renseigne SUPABASE_URL et SUPABASE_ANON dans index.html.'); return; }
-
-  sendBtn.disabled = true; sendBtn.textContent = 'Envoi en cours…';
-  const { error } = await db.from('contact_messages').insert([data]);
-  if (error) {
-    alert(error.message);
-    sendBtn.disabled = false; sendBtn.textContent = 'Envoyer le message';
-    return;
-  }
-  // Succès : on cache les champs, pas le <form> entier
-  $$('.form-group, .form-row, .btn-submit').forEach(el => el.style.display = 'none');
-  const ok = $('#formSuccess');
-  ok.hidden = false;
-  ok.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
-});
 </script>
 </body>
 </html>
