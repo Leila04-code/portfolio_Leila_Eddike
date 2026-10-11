@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Leila Eddike – Data Engineering Student</title>
-<meta name="description" content="Portfolio of Leila Eddike, Data Engineering student at ENSIAS. Big data pipelines, ML and MLOps, AWS cloud.">
+<meta name="description" content="Portfolio of Leila Eddike, Data Engineering student at ENSIAS. Data engineering, ML and MLOps, AWS cloud.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Leila Eddike – Data Engineering Student">
 <meta property="og:description" content="Data Engineering student at ENSIAS. Discover my projects, internships and background.">
@@ -124,9 +124,13 @@ nav.scrolled{background:rgba(251,247,244,.85);backdrop-filter:blur(14px);-webkit
 .body ul{display:grid;gap:.35rem;font-size:.97rem}
 .body li::before{content:"–";color:var(--accent-2);margin-right:.5rem}
 .item .stack{margin-top:var(--s2)}
+.story+.story{margin-top:var(--s1)}
+.body .story{font-size:.97rem;max-width:none}
 /* ========== ÉDUCATION / CERTIFICATIONS ========== */
-.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s2)}
-.award{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:var(--s3)}
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--s2)}
+.award{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);padding:var(--s3);display:flex;gap:var(--s2);align-items:flex-start}
+.award .ic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.award h3{font-size:1.05rem}
 .award p{font-size:.95rem}
 
 /* ========== CONTACT ========== */
@@ -207,7 +211,7 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
         <p>I'm Leila Eddike, a student majoring in Data Engineering and eager to discover the hidden horizons of this field. My passion for it grew as I explored databases, big data and cloud computing through my studies and internships.</p>
         <p>With my creativity and problem-solving skills, I hope to bring value to different sectors and find concrete solutions using everything I've learned along the way.</p>
         <div class="stats">
-          <div class="stat"><b data-target="3">0</b><span>Projects</span></div>
+          
           <div class="stat"><b data-target="2">0</b><span>Internships</span></div>
           <div class="stat"><b data-target="2">0</b><span>AWS certifications</span></div>
         </div>
@@ -239,22 +243,15 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
       <div class="item">
         <h3>End-of-year internship – Consult IT</h3>
         <div class="when">Rabat · July 1 – August 31, 2026</div>
-        <p>Contributed to the development and evolution of the internal CRM/ERP (Jupiter).</p>
-        <ul>
-          <li>Structured parsing of client needs, structuring of extracted skills and enrichment of Need records in the CRM.</li>
-          <li>Development and evolution of candidate / need matching using embeddings and business rules.</li>
-        </ul>
+        <p class="story">At Consult IT, I joined the team behind Jupiter, the company's internal CRM/ERP. My starting point was the client needs: before anyone can act on them, they have to be understood. I worked on parsing them in a structured way, organising the skills extracted from each request and enriching the Need records in the CRM.</p>
+        <p class="story">Once the needs were clean and structured, I moved on to the part that connects them to people: evolving the candidate / need matching, combining embeddings with business rules so that the suggestions made sense for recruiters.</p>
         <div class="stack"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">OpenClaw</span><span class="tag">OpenAI Embeddings</span></div>
       </div>
       <div class="item">
         <h3>End-of-year internship – Dyn IT</h3>
         <div class="when">Rabat · July 2025</div>
-        <p>Built a dashboard for the Inwi Challenge competition.</p>
-        <ul>
-          <li>Analysis and preparation of source data (Excel, CSV).</li>
-          <li>Creation and management of a SQL Server database, hosted and secured on Azure SQL Database.</li>
-          <li>Data modeling and creation of interactive Power BI dashboards.</li>
-        </ul>
+        <p class="story">For the Inwi Challenge, everything started from raw Excel and CSV files. I began by analysing and preparing the data, then set up a SQL Server database hosted and secured on Azure SQL Database, so the numbers had a reliable home.</p>
+        <p class="story">On top of it, I modelled the data and built interactive Power BI dashboards, turning scattered files into something people could actually explore.</p>
         <div class="stack"><span class="tag">SQL Server</span><span class="tag">Azure SQL Database</span><span class="tag">DAX</span><span class="tag">Power BI</span></div>
       </div>
     </div>
@@ -266,22 +263,12 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
   <div class="wrap">
     <h2 class="reveal">Projects &amp; achievements</h2>
     <div class="projects">
-      <article class="card featured reveal">
-        <div class="thumb"><img src="archi-trafic.png" alt="Architecture of the real-time traffic pipeline" loading="lazy" onerror="this.remove()">Architecture diagram<div class="ov">Kafka → Spark → Delta Lake</div></div>
-        <div class="body">
-          <h3>Real-time traffic data pipeline</h3>
-          <p class="muted">Personal project · Big Data</p>
-          <ul><li>Real-time big data pipeline: Kafka for traffic data ingestion, Spark Structured Streaming for processing and transformation.</li><li>Delta Lake architecture with Bronze / Silver / Gold layers to structure the data and make it reliable.</li><li>Orchestration with Airflow DAGs and data quality checks with Great Expectations between layers.</li></ul>
-          <div><span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">Delta Lake</span><span class="tag">Hive Metastore</span><span class="tag">Airflow</span><span class="tag">Great Expectations</span></div>
-          <div class="links"><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></div>
-        </div>
-      </article>
       <article class="card reveal">
         <div class="thumb"><img src="archi-vols.png" alt="Architecture of the flight delay prediction project" loading="lazy" onerror="this.remove()">Architecture diagram<div class="ov">FastAPI → Docker → Kubernetes</div></div>
         <div class="body">
           <h3>Flight delay prediction</h3>
           <p class="muted">ENSIAS · ML &amp; MLOps</p>
-          <ul><li>Analysis and cleaning of a Kaggle dataset of 500,000+ flights (pandas, NumPy).</li><li>Feature engineering: time-based variables, encoding, categorization.</li><li>Gradient Boosting model deployed as a REST API with FastAPI, Docker and Kubernetes.</li></ul>
+          <p class="story">Predicting flight delays starts with the data. I worked on a Kaggle dataset of more than 500,000 flights, analysing and cleaning it with pandas and NumPy, then engineering features (time-based variables, encoding, categorization) to give the model something meaningful to learn from.</p><p class="story">A Gradient Boosting model came out of it, but a model is only useful once people can use it. I deployed it as a REST API with FastAPI, packaged with Docker and orchestrated by Kubernetes, with GitHub Actions handling the CI/CD.</p>
           <div><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span></div>
           <div class="links"><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></div>
         </div>
@@ -291,7 +278,7 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
         <div class="body">
           <h3>Secure Cloud &amp; AI Architecture</h3>
           <p class="muted">ENSIAS · AWS</p>
-          <ul><li>Access control: least-privilege Security Groups and IAM roles.</li><li>Data protection at rest (KMS / RDS, S3 SSE) and in transit (TLS / HTTPS).</li><li>Secrets management with AWS Secrets Manager.</li></ul>
+          <p class="story">The question behind this project: how do you protect an AI architecture in the cloud? I started with access, using Security Groups built on least privilege and IAM roles, so each component can only do what it needs to.</p><p class="story">Then I protected the data itself, at rest with KMS (RDS) and S3 server-side encryption, and in transit with TLS / HTTPS. Secrets are handled by AWS Secrets Manager, kept out of the code.</p>
           <div><span class="tag">AWS IAM</span><span class="tag">Security Groups</span><span class="tag">KMS</span><span class="tag">S3</span><span class="tag">RDS</span><span class="tag">Secrets Manager</span></div>
           <div class="links"><a href="https://github.com/Leila04-code" target="_blank" rel="noopener">GitHub</a></div>
         </div>
@@ -324,8 +311,9 @@ footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);f
   <div class="wrap">
     <h2 class="reveal">Certifications</h2>
     <div class="awards reveal">
-      <div class="award"><h3>AWS Academy Graduate – Cloud Architecting</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_CLOUD]" target="_blank" rel="noopener" class="tag">View on Credly</a></p></div>
-      <div class="award"><h3>AWS Academy Graduate – Data Engineering</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_DATA]" target="_blank" rel="noopener" class="tag">View on Credly</a></p></div>
+      <div class="award"><span class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg></span><div><h3>AWS Academy Graduate – Cloud Architecting</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_CLOUD]" target="_blank" rel="noopener" class="tag">View on Credly</a></p></div></div>
+      <div class="award"><span class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg></span><div><h3>AWS Academy Graduate – Data Engineering</h3><p class="muted">AWS Academy</p><p><a href="[URL_CREDLY_DATA]" target="_blank" rel="noopener" class="tag">View on Credly</a></p></div></div>
+      <div class="award"><span class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg></span><div><h3>5-Day AI Agents: Intensive Vibe Coding Course With Google</h3><p class="muted">Google · Earned June 18, 2026</p><p><a href="https://developers.google.com/profile/badges/events/cloud/five-day-ai-agents" target="_blank" rel="noopener" class="tag">View badge</a></p></div></div>
     </div>
   </div>
 </section>
@@ -378,7 +366,7 @@ burger.addEventListener('click', () => {
 $$('#menu a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
 
 /* ----- Hero: typing effect ----- */
-const titles = ['Data Engineer in the making', 'Real-time big data pipelines', 'Cloud, ML and MLOps'];
+const titles = ['Data Engineer in the making', 'Data pipelines and dashboards', 'Cloud, ML and MLOps'];
 const typed = $('#typed');
 if (reduced) { typed.textContent = titles[0]; }
 else {
